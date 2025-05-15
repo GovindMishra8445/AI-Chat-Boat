@@ -1,4 +1,4 @@
-// function RecentSearch({ recentHistory, setRecentHistory, setSelectedHistory }) {
+// function c({ recentHistory, setRecentHistory, setSelectedHistory }) {
 //   const clearHistory = () => {
 //     localStorage.clear();
 //     setRecentHistory([]);
@@ -40,23 +40,19 @@
 
 // export default RecentSearch;
 
-import React from "react";
-
-function RecentSearch({ recentHistory, setRecentHistory, setSelectedHistory, setResult, setQuestion}) {
+function RecentSearch({ recentHistory, setRecentHistory, setSelectedHistory }) {
   const clearHistory = () => {
     localStorage.clear();
     setRecentHistory([]);
   };
 
-
-  
   if (!recentHistory || recentHistory.length === 0) {
     return (
       <div className="flex flex-col h-full">
         <div className="p-4 border-b dark:border-zinc-700 border-zinc-200">
           <h2 className="text-lg font-medium dark:text-white text-zinc-800 flex justify-between items-center">
             <span>Recent Searches</span>
-           
+
             <button
               onClick={clearHistory}
               className="text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200 transition-colors"
@@ -75,7 +71,6 @@ function RecentSearch({ recentHistory, setRecentHistory, setSelectedHistory, set
                 />
               </svg>
             </button>
-            
           </h2>
         </div>
         <div className="flex-1 flex items-center justify-center p-4 text-center text-zinc-500 dark:text-zinc-400">
@@ -90,7 +85,7 @@ function RecentSearch({ recentHistory, setRecentHistory, setSelectedHistory, set
       <div className="p-4 border-b dark:border-zinc-700 border-zinc-200">
         <h2 className="text-lg font-medium dark:text-white text-zinc-800 flex justify-between items-center">
           <span>Recent Searches</span>
-          
+
           <button
             onClick={clearHistory}
             className="text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200 transition-colors"
@@ -116,7 +111,10 @@ function RecentSearch({ recentHistory, setRecentHistory, setSelectedHistory, set
           {recentHistory.map((item, index) => (
             <li
               key={index}
-              onClick={() => setSelectedHistory(item)}
+              onClick={() => {
+                setSelectedHistory(item);
+                setQuestion(item); // ✅ Set input field to show selected question
+              }}
               className="px-4 py-3 truncate dark:text-zinc-300 text-zinc-700 cursor-pointer 
                          hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex items-center"
             >

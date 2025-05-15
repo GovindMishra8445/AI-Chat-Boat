@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { URL } from "./constants";
-import RecentSearch from "./components/RecentSearch";
 import { SunIcon, MoonIcon, SendIcon } from "./components/Icons";
 import QuestionAnswer from "./Components/QuestionAnswer";
 
@@ -13,6 +12,7 @@ import {
   useUser,
   SignInButton,
 } from "@clerk/clerk-react";
+import RecentSearch from "./Components/RecentSearch";
 
 function App() {
   const [question, setQuestion] = useState("");
@@ -142,6 +142,7 @@ function App() {
               recentHistory={recentHistory}
               setRecentHistory={setRecentHistory}
               setSelectedHistory={setSelectedHistory}
+              setQuestion={setQuestion} // ✅ Add this
             />
           </div>
 

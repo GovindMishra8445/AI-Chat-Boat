@@ -11,6 +11,7 @@ import {
   RedirectToSignIn,
   UserButton,
   useUser,
+  SignInButton,
 } from "@clerk/clerk-react";
 
 function App() {
@@ -150,7 +151,7 @@ function App() {
               sidebarOpen ? "md:ml-0" : "md:ml-0"
             } h-full dark:bg-zinc-800 bg-zinc-50`}
           >
-            <header className="flex justify-between items-center p-4 border-b dark:border-zinc-700 border-zinc-200">
+            {/* <header className="flex justify-between items-center p-4 border-b dark:border-zinc-700 border-zinc-200">
               <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-indigo-600">
                 Gemini Chat
               </h1>
@@ -161,6 +162,35 @@ function App() {
               >
                 {darkMode === "dark" ? <SunIcon /> : <MoonIcon />}
               </button>
+            </header> */}
+
+            <header className="flex justify-between items-center p-4 border-b dark:border-zinc-700 border-zinc-200">
+              <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-indigo-600">
+                Gemini Chat
+              </h1>
+
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={toggleDarkMode}
+                  className="p-2 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+                  aria-label="Toggle dark mode"
+                >
+                  {darkMode === "dark" ? <SunIcon /> : <MoonIcon />}
+                </button>
+
+                {/* Auth Buttons */}
+                <SignedIn>
+                  <UserButton afterSignOutUrl="/" />
+                </SignedIn>
+
+                <SignedOut>
+                  <SignInButton mode="modal">
+                    <button className="px-4 py-2 text-sm font-medium bg-violet-500 text-white rounded-lg hover:bg-violet-600 transition-all">
+                      Sign In
+                    </button>
+                  </SignInButton>
+                </SignedOut>
+              </div>
             </header>
 
             <div className="flex-1 flex flex-col p-4 md:p-6 overflow-hidden">

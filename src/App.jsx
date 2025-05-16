@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { URL } from "./constants"
-import { SunIcon, MoonIcon, SendIcon } from "./components/Icons";
+import { SunIcon, MoonIcon, SendIcon } from "./components/MainIcons";
 import QuestionAnswer from "./components/QuestionAnswer";
 
 import {

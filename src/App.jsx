@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { URL } from "./constants"
-import { SunIcon, MoonIcon, SendIcon } from "./components/MainIcons";
 import QuestionAnswer from "./components/QuestionAnswer";
 
 import {
@@ -13,6 +12,7 @@ import {
   SignInButton,
 } from "@clerk/clerk-react";
 import RecentSearch from "./components/RecentSearch";
+import { SendIcon } from "./components/MainIcons";
 
 function App() {
   const [question, setQuestion] = useState("");
@@ -238,7 +238,7 @@ function App() {
                     className="absolute right-3 top-1/2 -translate-y-1/2 bg-violet-500 hover:bg-violet-600 text-white p-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     disabled={!question && !selectedHistory}
                   >
-                    <SendIcon />
+                    <SendIcon/>
                   </button>
                 </div>
               </div>

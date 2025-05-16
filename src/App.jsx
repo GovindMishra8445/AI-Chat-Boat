@@ -10,9 +10,9 @@ import {
   useUser,
   SignInButton,
 } from "@clerk/clerk-react";
-import RecentSearch from "./Components/RecentSearch";
-import QuestionAnswer from "./Components/QuestionAnswer";
-import { SendIcon } from "./components/MainIcons";
+import RecentSearch from "../src/components/RecentSearch";
+import QuestionAnswer from "../src/components/QuestionAnswer";
+import { SendIcon } from "../src/components/MainIcons";
 
 function App() {
   const [question, setQuestion] = useState("");

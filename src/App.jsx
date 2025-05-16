@@ -165,7 +165,7 @@ function App() {
               </button>
             </header> */}
 
-            <header className="flex justify-between items-center p-4 border-b dark:border-zinc-700 border-zinc-200">
+            {/* <header className="flex justify-between items-center p-4 border-b dark:border-zinc-700 border-zinc-200">
               <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-indigo-600">
                 Gemini Chat
               </h1>
@@ -179,7 +179,6 @@ function App() {
                   {darkMode === "dark" ? <SunIcon /> : <MoonIcon />}
                 </button>
 
-                {/* Auth Buttons */}
                 <SignedIn>
                   <UserButton afterSignOutUrl="/" />
                 </SignedIn>
@@ -192,7 +191,7 @@ function App() {
                   </SignInButton>
                 </SignedOut>
               </div>
-            </header>
+            </header> */}
 
             <div className="flex-1 flex flex-col p-4 md:p-6 overflow-hidden">
               {result.length === 0 && (

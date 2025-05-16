@@ -113,7 +113,6 @@ function RecentSearch({ recentHistory, setRecentHistory, setSelectedHistory }) {
               key={index}
               onClick={() => {
                 setSelectedHistory(item);
-                setQuestion(item); // ✅ Set input field to show selected question
               }}
               className="px-4 py-3 truncate dark:text-zinc-300 text-zinc-700 cursor-pointer 
                          hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex items-center"

@@ -1,4 +1,4 @@
-// function c({ recentHistory, setRecentHistory, setSelectedHistory }) {
+// function ({ recentHistory, setRecentHistory, setSelectedHistory }) {
 //   const clearHistory = () => {
 //     localStorage.clear();
 //     setRecentHistory([]);

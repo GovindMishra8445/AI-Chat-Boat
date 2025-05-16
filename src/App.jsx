@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { URL } from "./constants"
+import RecentSearch from "./components/RecentSearch";
+import { SendIcon } from "./components/MainIcons";
 import QuestionAnswer from "./components/QuestionAnswer";
 
 import {
@@ -11,8 +13,6 @@ import {
   useUser,
   SignInButton,
 } from "@clerk/clerk-react";
-import RecentSearch from "./components/RecentSearch";
-import { SendIcon } from "./components/MainIcons";
 
 function App() {
   const [question, setQuestion] = useState("");
